@@ -22,3 +22,10 @@ docs/
 
 # Code coverage
 *.lst
+
+# output
+bin
+
+# misc
+.*
+*~
