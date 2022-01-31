@@ -1,1 +1,3 @@
-# helaD
+# helad
+
+An evolutionary simulator in D
