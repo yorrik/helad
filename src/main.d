@@ -1,6 +1,7 @@
 import std.stdio;
-import dray;
+import raylib;
+import program;
 
 void main() {
-	writeln("Hello, world!");
+	run();
 }
