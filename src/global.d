@@ -2,16 +2,17 @@ module global;
 
 const(char)* projectName = "hela";
 
-// Divide window size by aspect ratio
-// to split it into nodes
+/// multiplier of world nodes
+immutable int mult = 1;
+
+/// number of world nodes
 immutable enum WorldSize {
-    x = WindowSize.x / 16,
-    y = WindowSize.y / 10,
+    x = (WindowSize.x / 10) * mult,
+    y = (WindowSize.y / 10) * mult
 }
 
-/// Resolution of window
-/// 16:10 aspect ratio, 960x600
+/// window resolution
 immutable enum WindowSize {
-    x = 60 * 16,
-    y = 60 * 10
+    x = 920,
+    y = 600
 }
