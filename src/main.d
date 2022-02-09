@@ -1,7 +1,4 @@
-import std.stdio;
-
-import raylib;
-import program;
+import program = lib.program;
 
 void main() {
 	program.run();
