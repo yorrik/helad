@@ -1,15 +1,15 @@
-module program;
+module lib.program;
 
 import std.stdio;
 
-import raylib;
+import rl = raylib;
 import global;
 
 /// main game loop
 void run() {
     startWindow();
 
-    while (!WindowShouldClose()) {
+    while (!rl.WindowShouldClose()) {
         draw();
         input();
         logic();
@@ -18,28 +18,28 @@ void run() {
 
 /// creates a new window based on global settings
 private void startWindow() {
-    InitWindow(
-        WindowSize.x,
-        WindowSize.y,
+    rl.InitWindow(
+        WindowSize.width,
+        WindowSize.height,
         projectName
     );
 
-    SetTargetFPS(60);
+    rl.SetTargetFPS(60);
 }
 
 /// object draw loop
 private void draw() {
-    BeginDrawing();
-    DrawFPS(20, 20);
+    rl.BeginDrawing();
+    rl.DrawFPS(20, 20);
 
-    ClearBackground(Colors.BLACK);
-    EndDrawing();
+    rl.ClearBackground(rl.Colors.BLACK);
+    rl.EndDrawing();
 }
 
 /// user input loop
 private void input() {
-    switch (GetKeyPressed()) {
-    case KeyboardKey.KEY_A:
+    switch (rl.GetKeyPressed()) {
+    case rl.KeyboardKey.KEY_A:
         printf("hi");
         break;
     default:
