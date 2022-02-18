@@ -2,11 +2,15 @@ module lib.program;
 
 import std.stdio;
 
-import rl = raylib;
 import global;
+private import rl = raylib;
+private import lib.sim.world : World;
+
+World world;
 
 /// main game loop
 void run() {
+    world = new World();
     startWindow();
 
     while (!rl.WindowShouldClose()) {
@@ -31,6 +35,8 @@ private void startWindow() {
 private void draw() {
     rl.BeginDrawing();
     rl.DrawFPS(20, 20);
+
+    world.draw();
 
     rl.ClearBackground(rl.Colors.BLACK);
     rl.EndDrawing();
